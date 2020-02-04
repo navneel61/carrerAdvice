@@ -9,10 +9,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,24 +24,28 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> iconImage=new ArrayList<>();
     ArrayList<String> viewContent=new ArrayList<>();
     ArrayList<Integer> backColor=new ArrayList<>();
-
-
+    String[] topicList = {"How To Write Cover Letter","Resume Tips","Job Interviews","Finding Your Dream Company","Finding Your Passion","Self Empowerment","Enterpreneurship","Job Search","Career Advancement","Networking", "Personal Branding","Employers Corner"};
+    Integer[] drawableImages = {R.drawable.coverrletter,R.drawable.resumetip,R.drawable.jobinterviews,R.drawable.findcompany,R.drawable.findpassions,R.drawable.selfimprovement,R.drawable.entrepreneurship,R.drawable.jobsearchs,R.drawable.careeradvancements,R.drawable.networkings,R.drawable.brand,R.drawable.employee};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
         recyclerView=findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(MainActivity.this);
 
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         recyclerView.setLayoutManager(linearLayoutManager);
+        int[] colorList = this.getResources().getIntArray(R.array.colors);
 
 
+     /*   categoryList.put("title","How To Write Cover Letter");
+        categoryList.put("image",R.drawable.coverrletter);
+        categoryList.put("view","view");
+        categoryList.put("color",ContextCompat.getColor(this,R.color.colorSkyBlue));
+
+        categoryHashMapList.add(categoryList);
 
         mainContent.add("How To Write Cover Letter");
         mainContent.add("Resume Tips");
@@ -53,18 +60,18 @@ public class MainActivity extends AppCompatActivity {
         mainContent.add("Personal Branding");
         mainContent.add("Employers Corner");
 
-        iconImage.add(R.drawable.msg);
-        iconImage.add(R.drawable.resume);
-        iconImage.add(R.drawable.jobinterview);
-        iconImage.add(R.drawable.find);
-        iconImage.add(R.drawable.findpassion);
-        iconImage.add(R.drawable.selfempowerment);
-        iconImage.add(R.drawable.enterpreneur);
-        iconImage.add(R.drawable.jobsearch);
-        iconImage.add(R.drawable.careeradvancement);
-        iconImage.add(R.drawable.networking);
-        iconImage.add(R.drawable.personalbranding);
-        iconImage.add(R.drawable.employerwork);
+        iconImage.add(R.drawable.coverrletter);
+        iconImage.add(R.drawable.resumetip);
+        iconImage.add(R.drawable.jobinterviews);
+        iconImage.add(R.drawable.findcompany);
+        iconImage.add(R.drawable.findpassions);
+        iconImage.add(R.drawable.selfimprovement);
+        iconImage.add(R.drawable.entrepreneurship);
+        iconImage.add(R.drawable.jobsearchs);
+        iconImage.add(R.drawable.careeradvancements);
+        iconImage.add(R.drawable.networkings);
+        iconImage.add(R.drawable.brand);
+        iconImage.add(R.drawable.employee);
 
         for(int i=0;i<mainContent.size();i++)
         {
@@ -83,23 +90,20 @@ public class MainActivity extends AppCompatActivity {
         backColor.add(ContextCompat.getColor(this,R.color.colorLightOrange));
         backColor.add(ContextCompat.getColor(this,R.color.colorVoilet));
         backColor.add(ContextCompat.getColor(this,R.color.colorRed));
-        backColor.add(ContextCompat.getColor(this,R.color.colorGreen));
+        backColor.add(ContextCompat.getColor(this,R.color.colorGreen)); */
 
 
 
 
         ArrayList<carreermodel> carreermodels=new ArrayList<>();
-      //  carreermodels.add(model);
-
-        for(int i=0;i<mainContent.size();i++)
+        for(int i=0;i<colorList.length;i++)
         {
             carreermodel model=new carreermodel();
+            model.setTopic(topicList[i]);
+            model.setImg(drawableImages[i]);
+            model.setColor(colorList[i]);
+            Log.d("colouractivity", String.valueOf(colorList[i]));
             carreermodels.add(model);
-            model.setTopic(mainContent.get(i));
-            model.setImg(iconImage.get(i));
-            model.setView(viewContent.get(i));
-            model.setColor(backColor.get(i));
-
         }
 
 

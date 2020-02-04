@@ -1,5 +1,7 @@
 package com.example.carrer;
 
+import android.util.Log;
+
 public class carreermodel {
     private String topic;
     private String view;
@@ -15,20 +17,13 @@ public class carreermodel {
         this.topic = topic;
     }
 
-    public void setView(String view) {
-        this.view = view;
-    }
-
     public void setImg(int img) {
         this.img = img;
     }
 
     public void setColor(int color) {
         this.color = color;
-    }
-
-    public String getView() {
-        return view;
+        Log.d("modelcolor", String.valueOf(this.color));
     }
 
     public int getImg() {

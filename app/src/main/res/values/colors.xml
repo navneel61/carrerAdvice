@@ -14,4 +14,19 @@
     <color name="colorLightOrange">#E2886E</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlue">#2196F3</color>
+    <color name="colorBlack">#272525</color>
+    <color name="colorDarkWhite">#FCEDED</color>
+    <array name="colors">
+        <item>#CC5996F3</item>
+        <item>#C3DD5D67</item>
+        <item>#80F84E1D</item>
+        <item>#EB754CC5</item>
+        <item>#DD1C0F</item>
+        <item>#2F5DE463</item>
+        <item>#B503A9F4</item>
+        <item>#D8FF0319</item>
+        <item>#E2886E</item>
+        <item>#FFFFFF</item>
+        <item>#2196F3</item>
+    </array>
 </resources>

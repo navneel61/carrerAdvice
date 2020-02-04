@@ -1,10 +1,12 @@
 package com.example.carrer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,40 +16,51 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+
 public class CoverLetterAdapter extends RecyclerView.Adapter<CoverLetterAdapter.CoverLetters> {
 
-    ArrayList<CoverLetterModel> coverLetterModels=new ArrayList<>();
-    public View.OnClickListener mOnClickListener = new MyOnClickListener();;
+    ArrayList<CoverLetterModel> coverLetterModels;
     Context context;
+    int type;
 
-
-    public CoverLetterAdapter(Context context,ArrayList<CoverLetterModel> coverLetterModels)
+    public CoverLetterAdapter(Context context,ArrayList<CoverLetterModel> coverLetterModels,int type)
     {
         this.context=context;
         this.coverLetterModels=coverLetterModels;
+        Log.d("conssize", String.valueOf(this.coverLetterModels.size()));
+        this.type=type;
     }
 
     @NonNull
     @Override
     public CoverLetters onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.coverletterlayout,parent,false);
+        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_coverletter,parent,false);
         return new CoverLetters(vie);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CoverLetters holder, int position) {
-
-
         CoverLetterModel model=coverLetterModels.get(position);
-      //  int img=model.getMain_Image();
-     //   String main_Topic=model.getText_Main();
-        int imge=model.getContent_Image();
-        String title_Content=model.getTitle_Content();
-        String text_content=model.getText_Content();
-
-        holder.setData(imge,text_content,title_Content);
-
+        holder.imageViewC.setImageResource(model.getContent_Image());
+        holder.textViewC.setText(model.getTitle_Content());
+        if(type==0)
+        {
+            holder.textView.setText(model.getText_Content());
+            Log.d("type0size", String.valueOf(coverLetterModels.size()));
+            holder.buttonRead.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    context.startActivity(new Intent(context,SummaryActivity.class));
+                }
+            });
+        }
+        else if(type==1)
+        {
+            holder.textView.setVisibility(View.GONE);
+            holder.buttonRead.setVisibility(View.GONE);
+            Log.d("type1size", String.valueOf(coverLetterModels.size()));
+        }
     }
 
     @Override
@@ -57,32 +70,20 @@ public class CoverLetterAdapter extends RecyclerView.Adapter<CoverLetterAdapter.
 
     public class CoverLetters extends RecyclerView.ViewHolder
     {
-        ImageView imageView,imageView_C;
-        TextView textView,textView_C;
-
+        ImageView imageView,imageViewC;
+        TextView textView,textViewC;
+        Button buttonRead;
+        ImageView imgRelatedAticles;
+        TextView textViewRelatedArticleTitle;
         public CoverLetters(@NonNull View itemView) {
 
             super(itemView);
-
-            imageView_C=itemView.findViewById(R.id.imageView_content);
-            textView=itemView.findViewById(R.id.textView_content);
-            textView_C=itemView.findViewById(R.id.textView_title);
-
-        }
-        private void setData(int imge,String text_Contents,String title_Content)
-        {
-            imageView_C.setImageResource(imge);
-            textView.setText(text_Contents);
-            textView_C.setText(title_Content);
+            imageViewC=itemView.findViewById(R.id.image_view);
+            textView=itemView.findViewById(R.id.text_description);
+            textViewC=itemView.findViewById(R.id.text_title);
+            buttonRead=itemView.findViewById(R.id.button_read);
+            imgRelatedAticles=itemView.findViewById(R.id.image_view_related);
+            textViewRelatedArticleTitle=itemView.findViewById(R.id.text_title_related);
         }
     }
-    private class MyOnClickListener implements View.OnClickListener {
-
-        @Override
-        public void onClick(View v) {
-
-
-        }
-    }
-
 }

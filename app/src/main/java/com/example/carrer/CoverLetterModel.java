@@ -1,8 +1,8 @@
 package com.example.carrer;
 
+import android.util.Log;
+
 public class CoverLetterModel {
-    private String text_Main;
-    private int main_Image;
     private int content_Image;
     private String text_Content;
     private String title_Content;
@@ -31,19 +31,4 @@ public class CoverLetterModel {
         this.text_Content = text_Content;
     }
 
-    public String getText_Main() {
-        return text_Main;
-    }
-
-    public void setText_Main(String text_Main) {
-        this.text_Main = text_Main;
-    }
-
-    public int getMain_Image() {
-        return main_Image;
-    }
-
-    public void setMain_Image(int main_Image) {
-        this.main_Image = main_Image;
-    }
 }

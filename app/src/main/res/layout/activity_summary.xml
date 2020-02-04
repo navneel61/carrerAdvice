@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SummaryActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView_main"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/coverbasic"/>
+
+    <TextView
+        android:id="@+id/textView_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#808080"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="5 Easy Steps to Writing a Cover Letter "
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@id/imageView_main" />
+
+    <TextView
+        android:id="@+id/textView_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="Quick Summary "
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@id/textView_title" />
+
+    <TextView
+        android:id="@+id/textView_subtitle_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        android:text="Writing a cover letter doesn't have to be so difficult. Here, we break down the cover letter into 5 sections to make sure you impress that recruiter."
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@id/textView_subtitle" />
+
+    <Button
+        android:id="@+id/button_read_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="28dp"
+        android:background="@drawable/buttondrawable"
+        android:backgroundTint="@color/colorDarkWhite"
+        android:padding="5dp"
+        android:text="READ ORIGNAL ARTICLE"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_subtitle_content"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="Comments"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@id/button_read_article" />
+    <EditText
+        android:id="@+id/editText_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_comments"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/button_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/buttondrawable"
+        android:text="Comment"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText_comment"
+        app:layout_constraintVertical_bias="0.152" />
+    <TextView
+        android:id="@+id/textView_related"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="Related Articles"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@id/button_comment" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_relatedArticles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/button_comment"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

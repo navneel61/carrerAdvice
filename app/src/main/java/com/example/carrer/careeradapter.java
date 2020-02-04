@@ -21,6 +21,9 @@ public class careeradapter extends RecyclerView.Adapter<careeradapter.careerss> 
 
     ArrayList<carreermodel> carreermodels;
     Context context;
+    ImageView imageView;
+    TextView textView;
+    CardView cardView,cardVieww,cardViewww;
 
     public careeradapter(Context context,ArrayList<carreermodel> carreermodels)
     {
@@ -32,7 +35,7 @@ public class careeradapter extends RecyclerView.Adapter<careeradapter.careerss> 
     @NonNull
     @Override
     public careerss onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.careeradvice,parent,false);
+        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_category,parent,false);
         return new careerss(vie);
     }
 
@@ -40,12 +43,10 @@ public class careeradapter extends RecyclerView.Adapter<careeradapter.careerss> 
     public void onBindViewHolder(@NonNull careerss holder, int position) {
 
         carreermodel mo=carreermodels.get(position);
-        int img=mo.getImg();
-        String topic=mo.getTopic();
-        String view=mo.getView();
-        int color=mo.getColor();
-
-        holder.setData(topic,view,img,color);
+        imageView.setImageResource(mo.getImg());
+        textView.setText(mo.getTopic());
+        cardView.setCardBackgroundColor(mo.getColor());
+        Log.d("colouris",String.valueOf(mo.getColor()));
     }
 
     @Override
@@ -55,32 +56,15 @@ public class careeradapter extends RecyclerView.Adapter<careeradapter.careerss> 
 
     public class careerss extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-
-        ImageView imageView;
-        TextView textView;
-        TextView textVieww;
-        CardView cardView,cardVieww,cardViewww;
-
         public careerss(@NonNull View itemView) {
             super(itemView);
-
             imageView=itemView.findViewById(R.id.imageView);
             textView=itemView.findViewById(R.id.topic);
-            textVieww=itemView.findViewById(R.id.view);
             cardView=itemView.findViewById(R.id.cardview);
             cardVieww=itemView.findViewById(R.id.cardvieww);
             cardViewww=itemView.findViewById(R.id.cardviewww);
             itemView.setOnClickListener(this);
         }
-
-        private void setData(String topic, String view, int img, int color)
-        {
-            imageView.setImageResource(img);
-            textView.setText(topic);
-            textVieww.setText(view);
-            cardView.setCardBackgroundColor(color);
-        }
-
         @Override
         public void onClick(View v) {
             context.startActivity(new Intent(context,CoverLetter.class));
