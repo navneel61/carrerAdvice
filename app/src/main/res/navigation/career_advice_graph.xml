@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/career_advice_graph"
+    app:startDestination="@id/careerAdviceHomeFragment">
+
+    <fragment
+        android:id="@+id/careerAdviceHomeFragment"
+        android:name="com.example.carrer.CareerAdviceHomeFragment"
+        android:label="fragment_career_advice_home"
+        tools:layout="@layout/fragment_career_advice_home" />
+</navigation>

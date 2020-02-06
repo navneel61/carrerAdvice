@@ -42,11 +42,11 @@ public class CoverLetterAdapter extends RecyclerView.Adapter<CoverLetterAdapter.
     @Override
     public void onBindViewHolder(@NonNull CoverLetters holder, int position) {
         CoverLetterModel model=coverLetterModels.get(position);
-        holder.imageViewC.setImageResource(model.getContent_Image());
-        holder.textViewC.setText(model.getTitle_Content());
+       holder.imageViewC.setImageResource(model.getImage());
+        holder.textViewC.setText(model.getTitle());
         if(type==0)
         {
-            holder.textView.setText(model.getText_Content());
+            holder.textView.setText(model.getDescription());
             Log.d("type0size", String.valueOf(coverLetterModels.size()));
             holder.buttonRead.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -54,10 +54,11 @@ public class CoverLetterAdapter extends RecyclerView.Adapter<CoverLetterAdapter.
                     context.startActivity(new Intent(context,SummaryActivity.class));
                 }
             });
+            holder.textViewRead.setVisibility(View.GONE);
         }
         else if(type==1)
         {
-            holder.textView.setVisibility(View.GONE);
+            holder.textView.setText("07-NOV-2019");
             holder.buttonRead.setVisibility(View.GONE);
             Log.d("type1size", String.valueOf(coverLetterModels.size()));
         }
@@ -71,7 +72,7 @@ public class CoverLetterAdapter extends RecyclerView.Adapter<CoverLetterAdapter.
     public class CoverLetters extends RecyclerView.ViewHolder
     {
         ImageView imageView,imageViewC;
-        TextView textView,textViewC;
+        TextView textView,textViewC,textViewRead;
         Button buttonRead;
         ImageView imgRelatedAticles;
         TextView textViewRelatedArticleTitle;
@@ -84,6 +85,7 @@ public class CoverLetterAdapter extends RecyclerView.Adapter<CoverLetterAdapter.
             buttonRead=itemView.findViewById(R.id.button_read);
             imgRelatedAticles=itemView.findViewById(R.id.image_view_related);
             textViewRelatedArticleTitle=itemView.findViewById(R.id.text_title_related);
+            textViewRead=itemView.findViewById(R.id.text_view_read);
         }
     }
 }

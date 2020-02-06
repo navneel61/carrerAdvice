@@ -37,14 +37,22 @@ public class CoverLetter extends AppCompatActivity {
         for(int i=0;i<mainsContent.length;i++)
         {
             CoverLetterModel model1=new CoverLetterModel();
-            model1.setText_Content(mainsContent[i]);
-            model1.setContent_Image(imgProfile[i]);
-            model1.setTitle_Content(titlesContent[i]);
+          //  model1.setText_Content(mainsContent[i]);
+           // model1.setContent_Image(imgProfile[i]);
+           // model1.setTitle_Content(titlesContent[i]);
+            model1.setTitle(titlesContent[i]);
+            model1.setDescription(mainsContent[i]);
+            model1.setImage(imgProfile[i]);
+            Log.d("titles",titlesContent[i]);
+            Log.d("mains",mainsContent[i]);
+            Log.d("image", String.valueOf(imgProfile[i]));
             coverLetterModels.add(model1);
         }
 
 
         CoverLetterAdapter coverLetterAdapter=new CoverLetterAdapter(CoverLetter.this,coverLetterModels,0);
         recyclerView.setAdapter(coverLetterAdapter);
+      //  AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(this,coverLetterModels,0);
+      //  recyclerView.setAdapter(adapterCareerAdviceCategoryView);
     }
 }

@@ -23,7 +23,7 @@ public class SummaryActivity extends AppCompatActivity {
 
         recyclerViewRelatedArticles = findViewById(R.id.recyclerView_relatedArticles);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerViewRelatedArticles.setLayoutManager(linearLayoutManager);
         recyclerViewRelatedArticles.setNestedScrollingEnabled(false);
         List<CoverLetterModel> relatedArticle = new ArrayList<>();
@@ -32,12 +32,16 @@ public class SummaryActivity extends AppCompatActivity {
         for (int i = 0; i<images.length; i++)
         {
             article_model=new CoverLetterModel();
-            article_model.setContent_Image(images[i]);
-            article_model.setTitle_Content(title[i]);
+        //    article_model.setContent_Image(images[i]);
+         //   article_model.setTitle_Content(title[i]);
+            article_model.setImage(images[i]);
+            article_model.setTitle(title[i]);
             relatedArticle.add(article_model);
         }
         Log.d("relatedsize", String.valueOf(relatedArticle.size()));
-        CoverLetterAdapter adapter=new CoverLetterAdapter(this, (ArrayList<CoverLetterModel>) relatedArticle,1);
-        recyclerViewRelatedArticles.setAdapter(adapter);
+    //   CoverLetterAdapter adapter=new CoverLetterAdapter(this, (ArrayList<CoverLetterModel>) relatedArticle,1);
+      //  recyclerViewRelatedArticles.setAdapter(adapter);
+       //  AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(SummaryActivity.this, (ArrayList<CoverLetterModel>) relatedArticle,0);
+       //  recyclerViewRelatedArticles.setAdapter(adapterCareerAdviceCategoryView);
     }
 }

@@ -91,8 +91,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/textView_comments"
-        android:textSize="14sp"
-        android:layout_marginTop="10dp"/>
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/edit_design"
+        android:padding="20dp" />
     <Button
         android:id="@+id/button_comment"
         android:layout_width="wrap_content"
@@ -124,6 +128,6 @@
         android:id="@+id/recyclerView_relatedArticles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/button_comment"/>
+        app:layout_constraintTop_toBottomOf="@id/textView_related"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
