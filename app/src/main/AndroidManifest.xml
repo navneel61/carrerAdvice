@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareerAdviceActivity"
+        <activity android:name=".CareerAdviceViewAllActivity"></activity>
+        <activity android:name=".CareerAdviceViewAllFragment" />
+        <activity
+            android:name=".CareerAdviceActivity"
             android:theme="@style/AppThemes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +22,7 @@
         </activity>
         <activity android:name=".SummaryActivity" />
         <activity android:name=".CoverLetter" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

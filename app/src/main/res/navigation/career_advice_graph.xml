@@ -9,5 +9,15 @@
         android:id="@+id/careerAdviceHomeFragment"
         android:name="com.example.carrer.CareerAdviceHomeFragment"
         android:label="fragment_career_advice_home"
-        tools:layout="@layout/fragment_career_advice_home" />
+        tools:layout="@layout/fragment_career_advice_home" >
+        <action
+            android:id="@+id/action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment"
+            app:destination="@id/careerAdviceViewAllFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/careerAdviceViewAllFragment"
+        android:name="com.example.carrer.CareerAdviceHomeFragment"
+        android:label="fragment_career_advice_home"
+        tools:layout="@layout/activity_career_advice_view_all_fragment" />
 </navigation>

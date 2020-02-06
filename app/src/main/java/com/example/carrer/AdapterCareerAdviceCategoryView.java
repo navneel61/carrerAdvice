@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -26,6 +27,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
     Context context;
     CareerAdviceHomeFragment contexts;
     int type;
+    OnItemClick onItemClick;
 
     public AdapterCareerAdviceCategoryView(Context context, ArrayList<CoverLetterModel> list, int type) {
         this.context=context;
@@ -33,15 +35,16 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         this.type=type;
     }
 
-    public AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment contexts, ArrayList<CoverLetterModel> list) {
+    public AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment contexts, ArrayList<CoverLetterModel> list,OnItemClick onItemClick) {
         this.contexts=contexts;
         this.list = list;
+        this.onItemClick=onItemClick;
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_category_view,
-                parent, false));
+                parent, false),onItemClick);
     }
 
     @Override
@@ -55,6 +58,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
             holder.containerView.setVisibility(View.INVISIBLE);
             holder.viewAllView.setVisibility(View.VISIBLE);
         }
+
     }
 
     @Override
@@ -62,7 +66,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         return 4;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.image_view)
         ImageView imageView;
         @BindView(R.id.text_title)
@@ -82,9 +86,24 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         @BindView(R.id.imageViewAll)
         ImageView imageViewAll;
 
-        ViewHolder(@NonNull View itemView) {
+        OnItemClick onItemClick;
+
+        ViewHolder(@NonNull View itemView,OnItemClick onItemClick) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            this.onItemClick=onItemClick;
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onItemClick.onItemClicked(getAdapterPosition());
+        }
+
+    }
+
+    public interface OnItemClick
+    {
+        void onItemClicked(int position);
     }
 }

@@ -16,6 +16,7 @@
     <color name="colorBlue">#2196F3</color>
     <color name="colorBlack">#272525</color>
     <color name="colorDarkWhite">#FCEDED</color>
+    <color name="colorBackSkyBlue">#B6E2FD</color>
     <array name="colors">
         <item>#CC5996F3</item>
         <item>#C3DD5D67</item>

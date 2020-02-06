@@ -59,9 +59,42 @@
             layout="@layout/layout_career_advice_item"
             android:id="@+id/cat1"/>
 
-<!--        <include-->
-<!--            layout="@layout/layout_career_advice_item"-->
-<!--            android:id="@+id/cat2"/>-->
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat2" />
+
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat3"/>
+
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat4"/>
+
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat5"/>
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat6"/>
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat7"/>
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat8"/>
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat9"/>
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat10"/>
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat11"/>
+        <include
+            layout="@layout/layout_career_advice_item"
+            android:id="@+id/cat12"/>
 
     </LinearLayout>
     </androidx.core.widget.NestedScrollView>
