@@ -24,8 +24,7 @@ import butterknife.ButterKnife;
 public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<AdapterCareerAdviceCategoryView.ViewHolder> {
 
     ArrayList<CoverLetterModel> list;
-    Context context;
-    CareerAdviceHomeFragment contexts;
+    Context context, contexts;
     int type;
     OnItemClick onItemClick;
 
@@ -35,7 +34,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         this.type=type;
     }
 
-    public AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment contexts, ArrayList<CoverLetterModel> list,OnItemClick onItemClick) {
+    public AdapterCareerAdviceCategoryView(Context contexts, ArrayList<CoverLetterModel> list,OnItemClick onItemClick) {
         this.contexts=contexts;
         this.list = list;
         this.onItemClick=onItemClick;
@@ -66,7 +65,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         return 4;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ViewHolder extends RecyclerView.ViewHolder{
         @BindView(R.id.image_view)
         ImageView imageView;
         @BindView(R.id.text_title)
@@ -86,18 +85,16 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         @BindView(R.id.imageViewAll)
         ImageView imageViewAll;
 
-        OnItemClick onItemClick;
 
-        ViewHolder(@NonNull View itemView,OnItemClick onItemClick) {
+        ViewHolder(@NonNull View itemView, final OnItemClick onItemClick) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            this.onItemClick=onItemClick;
-            itemView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            onItemClick.onItemClicked(getAdapterPosition());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemClick.onItemClicked(getAdapterPosition());
+                }
+            });
         }
 
     }

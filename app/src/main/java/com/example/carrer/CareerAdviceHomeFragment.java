@@ -102,7 +102,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView1=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView1.setImageResource(drawableImages[0]);
         textView1.setText(titleList[0]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView1.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory2 (View view){
@@ -121,7 +121,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView2=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView2.setImageResource(drawableImages[1]);
         textView2.setText(titleList[1]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView2.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory3 (View view){
@@ -140,7 +140,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView3=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView3.setImageResource(drawableImages[2]);
         textView3.setText(titleList[2]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView3.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory4 (View view){
@@ -159,7 +159,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView4=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView4.setImageResource(drawableImages[3]);
         textView4.setText(titleList[3]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView4.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory5 (View view){
@@ -178,7 +178,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView5=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView5.setImageResource(drawableImages[4]);
         textView5.setText(titleList[4]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView5.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory6 (View view){
@@ -197,7 +197,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView6=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView6.setImageResource(drawableImages[5]);
         textView6.setText(titleList[5]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView6.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory7 (View view){
@@ -216,7 +216,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView7=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView7.setImageResource(drawableImages[6]);
         textView7.setText(titleList[6]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView7.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory8 (View view){
@@ -235,7 +235,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView8=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView8.setImageResource(drawableImages[7]);
         textView8.setText(titleList[7]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView8.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory9 (View view){
@@ -254,7 +254,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView9=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView9.setImageResource(drawableImages[8]);
         textView9.setText(titleList[8]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView9.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory10 (View view){
@@ -273,7 +273,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView10=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView10.setImageResource(drawableImages[9]);
         textView10.setText(titleList[9]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView10.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory11 (View view){
@@ -292,7 +292,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView11=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView11.setImageResource(drawableImages[10]);
         textView11.setText(titleList[10]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView11.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory12 (View view){
@@ -311,7 +311,7 @@ public class CareerAdviceHomeFragment extends Fragment implements AdapterCareerA
         cardView12=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
         imageView12.setImageResource(drawableImages[11]);
         textView12.setText(titleList[11]);
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(CareerAdviceHomeFragment.this,modelList,this);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,this);
         recyclerView12.setAdapter(adapterCareerAdviceCategoryView);
     }
 
