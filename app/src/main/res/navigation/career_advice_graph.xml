@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/careerAdviceViewAllFragment"
-        android:name="com.example.carrer.CareerAdviceHomeFragment"
-        android:label="fragment_career_advice_home"
+        android:name="com.example.carrer.CareerAdviceViewAllFragment"
+        android:label="fragment_career_advice_view_all"
         tools:layout="@layout/activity_career_advice_view_all_fragment" />
 </navigation>

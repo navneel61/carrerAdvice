@@ -1,6 +1,7 @@
 package com.example.carrer;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,41 +25,42 @@ import butterknife.ButterKnife;
 
 public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<AdapterCareerAdviceCategoryView.ViewHolder> {
 
-    ArrayList<CoverLetterModel> list;
-    Context context, contexts;
-    int type;
-    OnItemClick onItemClick;
+   private ArrayList<CoverLetterModel> list;
+   private Context contexts;
 
-    public AdapterCareerAdviceCategoryView(Context context, ArrayList<CoverLetterModel> list, int type) {
-        this.context=context;
+
+    public AdapterCareerAdviceCategoryView(Context contexts, ArrayList<CoverLetterModel> list) {
+        this.contexts = contexts;
         this.list = list;
-        this.type=type;
     }
 
-    public AdapterCareerAdviceCategoryView(Context contexts, ArrayList<CoverLetterModel> list,OnItemClick onItemClick) {
-        this.contexts=contexts;
-        this.list = list;
-        this.onItemClick=onItemClick;
-    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_category_view,
-                parent, false),onItemClick);
+                parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            if(position != 3) {
-                CoverLetterModel model=list.get(position);
-                holder.textTitle.setText(model.getTitle());
-                holder.imageView.setImageResource(model.getImage());
-            }
-        if (position == 3){
+        if (position != 3) {
+            CoverLetterModel model = list.get(position);
+            holder.textTitle.setText(model.getTitle());
+            holder.imageView.setImageResource(model.getImage());
+        }
+        if (position == 3) {
             holder.containerView.setVisibility(View.INVISIBLE);
             holder.viewAllView.setVisibility(View.VISIBLE);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("positionis", String.valueOf(position));
 
+//                navController = Navigation.findNavController(v);
+//                navController.navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment);
+            }
+        });
     }
 
     @Override
@@ -65,7 +68,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         return 4;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.image_view)
         ImageView imageView;
         @BindView(R.id.text_title)
@@ -86,21 +89,10 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         ImageView imageViewAll;
 
 
-        ViewHolder(@NonNull View itemView, final OnItemClick onItemClick) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onItemClick.onItemClicked(getAdapterPosition());
-                }
-            });
         }
 
-    }
-
-    public interface OnItemClick
-    {
-        void onItemClicked(int position);
     }
 }

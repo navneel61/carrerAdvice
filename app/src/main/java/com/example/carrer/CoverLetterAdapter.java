@@ -44,6 +44,7 @@ public class CoverLetterAdapter extends RecyclerView.Adapter<CoverLetterAdapter.
         CoverLetterModel model=coverLetterModels.get(position);
        holder.imageViewC.setImageResource(model.getImage());
         holder.textViewC.setText(model.getTitle());
+        Log.d("titleis",model.getTitle());
         if(type==0)
         {
             holder.textView.setText(model.getDescription());

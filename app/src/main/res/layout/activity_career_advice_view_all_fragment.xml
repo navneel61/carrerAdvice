@@ -7,7 +7,7 @@
     tools:context=".CareerAdviceViewAllFragment">
 
     <include
-        layout="@layout/coverletterlayout"
+        layout="@layout/item_cover_letter"
         android:id="@+id/cat1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
